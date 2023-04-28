@@ -1,5 +1,4 @@
-class Figura 
-{
+class Figura {
   //CONSTRUCTOR
     constructor(x, y, altura, base) {
     this.posicion = createVector(x,y);
@@ -29,7 +28,6 @@ class Rectangulo extends Figura
     
   }
 }
-//CLASE TRIANGULO HEREDA DE FIGURA
 class Triangulo extends Figura
 {
   constructor(x, y, altura, base) 
@@ -44,7 +42,7 @@ class Triangulo extends Figura
     
   }
 }
-//CLASE ELIPSE HEREDA DE FIGURA
+
 class Elipse extends Figura 
 {
   constructor(x, y, altura, base) 
@@ -66,9 +64,14 @@ var dibujando = 'circulo'
 var btnCirculo =  null;
 var btnRectangulo = null;
 var btnTriangulo=null;
+var titulo=null;
 
 function setup() {
   createCanvas(400, 400);
+   // Titulo
+  titulo = createDiv("JUEGO ANTI ESTRES");
+  titulo.position(130,380);
+  titulo.style('color', 'black');
   //BOTON CIRCULO
   btnCirculo  = createButton ('Circulo')
   btnCirculo .position(0,0);
@@ -77,7 +80,7 @@ function setup() {
   btnRectangulo = createButton ('Rectangulo')
   btnRectangulo.position(75,0);
   btnRectangulo.mousePressed(changeRectangulo);
-  //BOTON LINEA
+  //BOTON TRIANGULO
   btnTriangulo = createButton ('Linea')
   btnTriangulo.position(175,0);
   btnTriangulo.mousePressed(changeTriangulo);
@@ -105,7 +108,6 @@ function changeRectangulo ()
 
   dibujando = 'rectangulo';
 }
-//SOMBREADO DE LINEA
 function changeTriangulo ()
 {
    btnTriangulo.style('backgroud-color','#cccccc');
@@ -148,3 +150,4 @@ function mouseClicked() {
   return false;
  
 }
+
